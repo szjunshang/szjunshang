@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Shenzhen Junsha Trading Co., Ltd - Get in touch for international trade, mobile app, and supply chain services.">
+    <meta name="author" content="Shenzhen Junsha Trading Co., Ltd">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Us - Shenzhen Junsha Trading Co., Ltd">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://szjunshang.com/contact">
+    <title>Contact Us - Shenzhen Junsha Trading Co., Ltd</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-card {
+            background: var(--text-light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(26, 58, 110, 0.08);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(26, 58, 110, 0.08), rgba(201, 164, 92, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover .contact-card-icon {
+            background: var(--gradient-gold);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .contact-card-icon svg {
+            width: 36px;
+            height: 36px;
+            color: var(--primary-blue);
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover .contact-card-icon svg {
+            color: var(--primary-dark);
+        }
+        
+        .contact-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact-card p {
+            color: var(--text-dark-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .contact-card a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+        
+        .contact-form-section {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.97) 0%, rgba(26, 58, 110, 0.97) 100%);
+            border-radius: 30px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .contact-form-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-form-section h2 {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .contact-form-section .form-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-form-section .form-group label {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .contact-form-section .form-group input,
+        .contact-form-section .form-group textarea,
+        .contact-form-section .form-group select {
+            width: 100%;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form-section .form-group input:focus,
+        .contact-form-section .form-group textarea:focus,
+        .contact-form-section .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.2);
+        }
+        
+        .contact-form-section .form-group input::placeholder,
+        .contact-form-section .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .contact-form-section .form-group select option {
+            background: var(--primary-dark);
+            color: var(--text-light);
+        }
+        
+        .quick-contact-section {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+            border: 1px solid rgba(26, 58, 110, 0.1);
+        }
+        
+        .quick-contact-section h3 {
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .quick-contact-card {
+            background: var(--text-light);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .quick-contact-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+        
+        .quick-contact-card svg {
+            width: 40px;
+            height: 40px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .quick-contact-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .quick-contact-card p {
+            color: var(--text-dark-secondary);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-form-section {
+                padding: 40px 30px;
+            }
+            
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form-section {
+                padding: 30px 20px;
+            }
+            
+            .contact-form-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"><div class="loader-content"><div class="loader-spinner"></div><p>Loading...</p></div></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 100 100" width="50" height="50"><circle cx="50" cy="50" r="48" fill="#0a1628" stroke="#c9a45c" stroke-width="2"/><text x="50" y="58" text-anchor="middle" fill="#c9a45c" font-family="Arial" font-size="36" font-weight="bold">JS</text></svg>
+                <div><span class="logo-text">JUNSHA</span><span class="logo-tagline">Global Trading</span></div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-particles"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Get In Touch</span>
+            <h1 class="hero-title">Contact<br><span>Us</span></h1>
+            <p class="hero-description">We'd love to hear from you. Reach out to discuss how we can help your business grow globally.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Contact Cards -->
+            <div class="contact-cards-grid scroll-reveal">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Office Address</h3>
+                    <p>405, Building 13, Ruifeng Community<br>Yousong Community, Longhua Street<br>Longhua District, Shenzhen<br>518000, China</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries:<br><a href="mailto:support@szjunshang.com">support@szjunshang.com</a><br><br>Business Development:<br><a href="mailto:qinjunjie@szjunshang.com">qinjunjie@szjunshang.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday<br>9:00 AM - 6:00 PM (CST)<br><br>24/7 Support Available<br>for Partners</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-section scroll-reveal">
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" name="firstName" placeholder="John" required></div>
+                            <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" placeholder="Doe" required></div>
+                        </div>
+                        <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" placeholder="john@example.com" required></div>
+                        <div class="form-row">
+                            <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567"></div>
+                            <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="company" placeholder="Your Company"></div>
+                        </div>
+                        <div class="form-group"><label for="subject">Subject *</label><select id="subject" name="subject" required><option value="">Select a subject</option><option value="trade">International Trade Services</option><option value="mobile">Mobile App Solutions</option><option value="logistics">Logistics & Supply Chain</option><option value="partnership">Partnership Inquiry</option><option value="other">Other</option></select></div>
+                        <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><line x1="22" y1="2"/><line x1="11" y1="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Contact Options -->
+            <div class="quick-contact-section scroll-reveal">
+                <h3>Quick Contact Options</h3>
+                <div class="quick-contact-grid">
+                    <a href="mailto:support@szjunshang.com" class="quick-contact-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <h4>Email Support</h4>
+                        <p>Response within 24 hours</p>
+                    </a>
+                    <a href="mailto:qinjunjie@szjunshang.com" class="quick-contact-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h4>Business Development</h4>
+                        <p>Partnership opportunities</p>
+                    </a>
+                    <div class="quick-contact-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                        <h4>Mobile App Support</h4>
+                        <p>Google Play & App Store</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg, #0a1628 0%, #1a3a6e 100%);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:#fff;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#c9a45c" stroke-width="2" style="width:60px;height:60px;margin-bottom:20px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <h3 style="margin-bottom:10px;">Shenzhen, China</h3>
+                <p style="opacity:0.7;">Longhua District - Global Operations Hub</p>
+            </div>
+        </div>
+        <div class="map-overlay"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><svg viewBox="0 0 100 100" width="50" height="50"><circle cx="50" cy="50" r="48" fill="#0a1628" stroke="#c9a45c" stroke-width="2"/><text x="50" y="58" text-anchor="middle" fill="#c9a45c" font-family="Arial" font-size="36" font-weight="bold">JS</text></svg><span>JUNSHA</span></div>
+                    <p>Your trusted partner for international trade, mobile applications, and comprehensive supply chain solutions.</p>
+                </div>
+                <div class="footer-column"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="culture.html">Culture</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-column"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">International Trade</a></li><li><a href="services.html">Mobile Apps</a></li><li><a href="services.html">Supply Chain</a></li><li><a href="services.html">Logistics</a></li><li><a href="services.html">Exhibitions</a></li></ul></div>
+                <div class="footer-column"><h4>Contact Info</h4><ul class="footer-links"><li><strong>Address:</strong><br>405, Building 13, Ruifeng Community<br>Yousong Community, Longhua Street<br>Longhua District, Shenzhen<br>518000, China</li><li><strong>Email:</strong><br>support@szjunshang.com</li><li><strong>Business:</strong><br>qinjunjie@szjunshang.com</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 Shenzhen Junsha Trading Co., Ltd. All Rights Reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
